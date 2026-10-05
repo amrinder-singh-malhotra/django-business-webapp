@@ -1,0 +1,31 @@
+{% extends "base.html" %} 
+{% load static %}
+{% block title %} About Webpage {% endblock title %}
+{% block body %}
+<div class="ratio ratio-21x9 ratio-services-banner">
+    <img src="{% static 'images/about.png' %}" class="d-block opacity-75 w-100 h-100 mw-100 object-fit-cover " alt="...">
+    <div class="position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center">
+        <h1 class="text-black fw-bold add-shadow-stroke-4 display-1">About Us</h1>
+    </div>
+</div>
+
+  <!--Container-1-->
+<div class="container-fluid my-2 p-3 p-md-4">
+        <div class="row g-4">
+            <div class= "col-sm-12 col-lg-6">
+                <div class="p-2 p-md-3 bg-light border rounded-4 shadow w-100 h-100 mw-100">
+                <h5 class="text-center fw-bolder fs-3" style="color: #0b3556;">Galaxy Trading Company</h5>
+                <div><p class="text-black fw-normal lh-2 mt-3"> {{items.paragraph}}<p> </div>
+    </div>
+    </div>  
+    
+     <div class= "col-sm-12 col-lg-6">
+                <div class="p-2 p-md-3 bg-light border rounded-4 shadow w-100 h-100 mw-100">
+                <h5 class="text-center fw-bolder fs-3" style="color: #0b3556;">Why Choose Us?</h5>
+                <p class="text-black fw-normal lh-2 mt-3"> {{items.paragraph_2}} <p> 
+    </div>
+    </div>      
+    </div>
+    </div>      
+
+{% endblock body %}

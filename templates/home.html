@@ -1,0 +1,376 @@
+{% extends "base.html" %} 
+{% load static %}
+{% block title %} HOME PAGE {% endblock title %}
+{% block body %}
+{% if items.0 %}
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    {% if items.1 %}<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>{% endif %}
+    {% if items.2 %}<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>{% endif %}
+  </div>
+
+  <div class="carousel-inner">
+    <!-- First Slide (Item index 0) -->
+    <div class="carousel-item active">
+      <!-- DESKTOP DEVICE BANNER -->
+      <div class="d-lg-block d-none d-md-none">
+      <div class="ratio ratio-21x9"> 
+        <img src="{{ items.0.image.url }}" class="d-none d-md-block w-100 h-100 mw-100 object-fit-cover" alt="...">
+      </div><!-- Ratio-Div-Closed -->
+    </div><!-- DESKTOP BANNER OUTER-DIV-CLOSED-->
+
+     <!-- MEDIUM DEVICES BANNER FROM 768PX to 960PX -->
+        <div class="d-md-block d-none d-lg-none">
+        <div class="ratio ratio-21x9">
+      <img src="{% static 'images/hero-banner-medium-flight.png' %}" class="w-100 h-100 mw-100 object-fit-cover" alt="...">
+        </div> <!-- MEDIUM DEVICES BANNER RATIO-CLASS-DIV-CLOSED-->
+      </div> <!-- MEDIUM DEVICES BANNER OUTER-DIV-CLOSED-->
+
+         <!-- MOBILE DEVICES BANNER -->
+        <div class="d-block d-md-none d-lg-none">
+          <div class="ratio ratio-21x9">
+        <img src="{% static 'images/hero-banner-small-flight.png' %}" class="w-100 h-100 mw-100 object-fit-cover" alt="...">
+          </div> <!-- MOBILE BANNER RATIO-CLASS-DIV-Closed -->
+        </div> <!-- MOBILE DEVICES BANNER OUTER-DIV-CLOSED-->
+        
+
+      <div class="carousel-caption d-none d-md-block">
+        <h5>{{ items.0.title }}</h5>
+        <p>{{ items.0.description }}</p>
+      </div>
+
+    </div>
+
+    <!-- Second Slide  -->
+    {% if items.1 %}
+    <div class="carousel-item">
+
+    <div class="d-lg-block d-none d-md-none">
+      <div class="ratio ratio-21x9">
+        <img src="{{ items.1.image.url }}" class="d-none d-md-block w-100 h-100 mw-100 object-fit-cover" alt="..." >
+        </div><!-- Ratio-Div-Closed -->
+      </div><!-- DESKTOP BANNER OUTER-DIV-CLOSED-->
+
+        <!-- MEDIUM DEVICES BANNER FROM 768PX to 960PX -->
+        <div class="d-md-block d-none d-lg-none">
+        <div class="ratio ratio-21x9">
+      <img src="{% static 'images/hero-banner-medium-car.png' %}" class="w-100 h-100 mw-100 object-fit-cover" alt="...">
+        </div> <!-- MEDIUM DEVICES BANNER RATIO-CLASS-DIV-CLOSED-->
+      </div> <!-- MEDIUM DEVICES BANNER OUTER-DIV-CLOSED-->
+
+         <!-- MOBILE DEVICES BANNER -->
+        <div class="d-block d-md-none d-lg-none">
+          <div class="ratio ratio-21x9">
+        <img src="{% static 'images/hero-banner-small-car.png' %}" class="w-100 h-100 mw-100 object-fit-cover" alt="...">
+          </div> <!-- MOBILE BANNER RATIO-CLASS-DIV-Closed -->
+        </div> <!-- MOBILE DEVICES BANNER OUTER-DIV-CLOSED-->
+  
+      <div class="carousel-caption d-none d-md-block">
+        <h5>{{ items.1.title }}</h5>
+        <p>{{ items.1.description }}</p>
+      </div>
+
+     <!--carousel-item-DIV-CLOSED -->
+    </div>
+    {% endif %}
+
+    <!-- Third Slide -->
+    {% if items.2 %}
+    <div class="carousel-item">
+      <div CLASS="d-lg-block d-none d-md-none">
+      <div class="ratio ratio-21x9">
+        <img src="{{ items.2.image.url }}" class="d-none d-md-block w-100 h-100 mw-100 object-fit-cover" alt="..." >
+        </div>
+      </div>
+
+      <!-- MEDIUM DEVICES BANNER FROM 768PX to 960PX -->
+        <div class="d-md-block d-none d-lg-none">
+        <div class="ratio ratio-21x9">
+      <img src="{% static 'images/hero-banner-medium-money.png' %}" class="w-100 h-100 mw-100 object-fit-cover" alt="...">
+        </div> <!-- MEDIUM DEVICES BANNER RATIO-CLASS-DIV-CLOSED-->
+      </div> <!-- MEDIUM DEVICES BANNER OUTER-DIV-CLOSED-->
+
+         <!-- MOBILE DEVICES BANNER -->
+        <div class="d-block d-md-none d-lg-none">
+          <div class="ratio ratio-21x9">
+        <img src="{% static 'images/hero-banner-small-money.png' %}" class="w-100 h-100 mw-100 object-fit-cover" alt="...">
+          </div> <!-- MOBILE BANNER RATIO-CLASS-DIV-Closed -->
+        </div> <!-- MOBILE DEVICES BANNER OUTER-DIV-CLOSED-->
+    
+      <div class="carousel-caption d-none d-md-block">
+        <h5>{{ items.2.title }}</h5>
+        <p>{{ items.2.description }}</p>
+      </div>
+
+    </div>
+    {% endif %}
+   <!-- carousel-inner closed -->
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+{% else %}
+
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+
+   <!--New-carousel-1-->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+
+       <!-- DESKTOP DEVICE BANNER -->
+      <div class="d-lg-block d-none d-md-none">
+      <div class="ratio ratio-21x9">
+         <img src="{% static 'images/hero-banner-desktop-flight.png' %}" class="w-100 h-100 mw-100 object-fit-cover" alt="...">
+      </div> <!-- DESKTOP BANNER RATIO-CLASS-CLOSED -->
+    </div> <!-- DESKTOP BANNER OUTER-DIV-CLOSED-->
+
+         <!-- MEDIUM DEVICES BANNER FROM 768PX to 960PX -->
+        <div class="d-md-block d-none d-lg-none">
+        <div class="ratio ratio-21x9">
+      <img src="{% static 'images/hero-banner-medium-flight.png' %}" class="w-100 h-100 mw-100 object-fit-cover" alt="...">
+        </div> <!-- MEDIUM DEVICES BANNER RATIO-CLASS-DIV-CLOSED-->
+      </div> <!-- MEDIUM DEVICES BANNER OUTER-DIV-CLOSED-->
+
+         <!-- MOBILE DEVICES BANNER -->
+        <div class="d-block d-md-none d-lg-none">
+          <div class="ratio ratio-21x9">
+        <img src="{% static 'images/hero-banner-small-flight.png' %}" class="w-100 h-100 mw-100 object-fit-cover" alt="...">
+          </div> <!-- MOBILE BANNER RATIO-CLASS-DIV-Closed -->
+        </div> <!-- MOBILE DEVICES BANNER OUTER-DIV-CLOSED-->
+        
+<!--carousel-item-DIV-CLOSED -->
+    </div>
+
+    <!--New-carousel-2-->
+    <div class="carousel-item">
+      <!-- DESKTOP DEVICE BANNER -->
+      <div class="d-lg-block d-none d-md-none">
+      <div class="ratio ratio-21x9">
+         <img src="{% static 'images/hero-banner-desktop-car.png' %}" class="w-100 h-100 mw-100 object-fit-cover" alt="...">
+      </div> <!-- DESKTOP BANNER RATIO-CLASS-CLOSED -->
+    </div> <!-- DESKTOP BANNER OUTER-DIV-CLOSED-->
+
+         <!-- MEDIUM DEVICES BANNER FROM 768PX to 960PX -->
+        <div class="d-md-block d-none d-lg-none">
+        <div class="ratio ratio-21x9">
+      <img src="{% static 'images/hero-banner-medium-car.png' %}" class="w-100 h-100 mw-100 object-fit-cover" alt="...">
+        </div> <!-- MEDIUM DEVICES BANNER RATIO-CLASS-DIV-CLOSED-->
+      </div> <!-- MEDIUM DEVICES BANNER OUTER-DIV-CLOSED-->
+
+         <!-- MOBILE DEVICES BANNER -->
+        <div class="d-block d-md-none d-lg-none">
+          <div class="ratio ratio-21x9">
+        <img src="{% static 'images/hero-banner-small-car.png' %}" class="w-100 h-100 mw-100 object-fit-cover" alt="...">
+          </div> <!-- MOBILE BANNER RATIO-CLASS-DIV-Closed -->
+        </div> <!-- MOBILE DEVICES BANNER OUTER-DIV-CLOSED-->
+  
+    <!--carousel-item-DIV-CLOSED -->
+    </div>
+
+    <!--New-carousel-3-->
+    <div class="carousel-item">
+      <!-- DESKTOP DEVICE BANNER -->
+      <div CLASS="d-lg-block d-none d-md-none">
+      <div class="ratio ratio-21x9">
+         <img src="{% static 'images/hero-banner-desktop-money.png' %}" class="w-100 h-100 mw-100 object-fit-cover" alt="...">
+      </div> <!-- DESKTOP BANNER RATIO-CLASS-CLOSED -->
+    </div> <!-- DESKTOP BANNER OUTER-DIV-CLOSED-->
+
+         <!-- MEDIUM DEVICES BANNER FROM 768PX to 960PX -->
+        <div class="d-md-block d-none d-lg-none">
+        <div class="ratio ratio-21x9">
+      <img src="{% static 'images/hero-banner-medium-money.png' %}" class="w-100 h-100 mw-100 object-fit-cover" alt="...">
+        </div> <!-- MEDIUM DEVICES BANNER RATIO-CLASS-DIV-CLOSED-->
+      </div> <!-- MEDIUM DEVICES BANNER OUTER-DIV-CLOSED-->
+
+         <!-- MOBILE DEVICES BANNER -->
+        <div class="d-block d-md-none d-lg-none">
+          <div class="ratio ratio-21x9">
+        <img src="{% static 'images/hero-banner-small-money.png' %}" class="w-100 h-100 mw-100 object-fit-cover" alt="...">
+          </div> <!-- MOBILE BANNER RATIO-CLASS-DIV-Closed -->
+        </div> <!-- MOBILE DEVICES BANNER OUTER-DIV-CLOSED-->
+    
+    <!--carousel-item-DIV-CLOSED -->
+    </div>
+  <!--carousel-Parent-DIV-CLOSED -->
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+{% endif %}
+<!-- Master Parent Box with Light Grey Background, Rounded Corners, and Border -->
+<!-- ================= SERVICES CARDS SECTION (EXACT 6 CARDS) ================= -->
+{% if services %}
+<div class="container-fluid my-4">
+  <div class="p-3 bg-light border rounded-4 shadow-sm">
+    
+    <div class="text-center mb-4">
+      <h2 class="fw-bold text-dark">Explore Our Services</h2>
+      <p class="text-muted">Everything you need, all in one place</p>
+    </div>
+
+    <div class="row g-4">
+      <!-- CARD 1 -->
+      <div class="col-sm-12 col-lg-4 col-md-6">
+        <div class="card border shadow-sm rounded-4 w-100 mw-100 h-100 bg-white">
+          <img src="{{ services.card1_image.url }}" class="card-img-top w-100 p-3 object-fit-cover" alt="..." style="height: 220px;">
+          <div class="card-body d-flex flex-column">
+            <p class="card-text">{{ services.card1_p }}</p>
+            <a href="{% url 'services' %}" class="btn btn-primary mt-auto">{{ services.card1_anchor }}</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="col-sm-12 col-lg-4 col-md-6">
+        <div class="card border shadow-sm rounded-4 w-100 mw-100 h-100 bg-white" >
+          <img src="{{ services.card2_image.url }}" class="card-img-top w-100 p-3 object-fit-cover" alt="..." style="height: 220px;">
+          <div class="card-body d-flex flex-column">
+            <p class="card-text">{{ services.card2_p }}</p>
+            <a href="{% url 'services' %}" class="btn btn-primary mt-auto">{{ services.card2_anchor }}</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="col-sm-12 col-lg-4 col-md-6">
+        <div class="card border shadow-sm rounded-4 w-100 mw-100 h-100 bg-white">
+          <img src="{{ services.card3_image.url }}" class="card-img-top w-100 p-3 object-fit-cover" alt="..." style="height: 220px;">
+          <div class="card-body d-flex flex-column">
+            <p class="card-text">{{ services.card3_p }}</p>
+            <a href="{% url 'services' %}" class="btn btn-primary mt-auto">{{ services.card3_anchor }}</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="col-sm-12 col-lg-4 col-md-6">
+        <div class="card border shadow-sm rounded-4 w-100 mw-100 h-100 bg-white">
+          <img src="{{ services.card4_image.url }}" class="card-img-top w-100 p-3 object-fit-cover" alt="..." style="height: 220px;">
+          <div class="card-body d-flex flex-column" >
+            <p class="card-text">{{ services.card4_p }}</p>
+            <a href="{% url 'services' %}" class="btn btn-primary mt-auto">{{ services.card4_anchor }}</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 5 -->
+      <div class="col-sm-12 col-lg-4 col-md-6">
+        <div class="card border shadow-sm rounded-4 w-100 mw-100 h-100 bg-white">
+          <img src="{{ services.card5_image.url }}" class="card-img-top w-100 p-3 object-fit-cover" alt="..." style="height: 220px;">
+          <div class="card-body d-flex flex-column">
+            <p class="card-text">{{ services.card5_p }}</p>
+            <a href="{% url 'services' %}" class="btn btn-primary mt-auto">{{ services.card5_anchor }}</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 6 -->
+      <div class="col-sm-12 col-lg-4 col-md-6">
+        <div class="card border shadow-sm rounded-4 w-100 mw-100 h-100 bg-white">
+          <img src="{{ services.card6_image.url }}" class="card-img-top w-100 p-3 object-fit-cover" alt="..." style="height: 220px;">
+          <div class="card-body d-flex flex-column">
+            <p class="card-text">{{ services.card6_p }}</p>
+            <a href="{% url 'services' %}" class="btn btn-primary mt-auto">{{ services.card6_anchor }}</a>
+          </div>
+        </div>
+      </div>
+
+      {% else %}
+        <div class="container-fluid my-4">
+        <div class="p-3 bg-light border rounded-4 shadow-sm">
+    
+    <div class="text-center mb-4">
+      <h2 class="fw-bold text-dark">Explore Our Services</h2>
+      <p class="text-muted">Everything you need, all in one place</p>
+    </div>
+
+    <div class="row g-4">
+      <!-- CARD 1 -->
+      <div class="col-sm-12 col-lg-4 col-md-6">
+        <div class="card border shadow-sm rounded-4 w-100 mw-100 h-100 bg-white">
+          <img src="{% static 'images/passport-image-card.png' %}" class="card-img-top w-100 p-3 object-fit-cover" alt="..." style="height: 220px; ">
+          <div class="card-body d-flex flex-column">
+            <a href="{% url 'services' %}" class="btn btn-primary mt-auto">Services</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="col-sm-12 col-lg-4 col-md-6">
+        <div class="card border shadow-sm rounded-4 w-100 mw-100 h-100 bg-white" >
+          <img src="{% static 'images/western-money-image.png' %}" class="card-img-top w-100 p-3 object-fit-cover" alt="..." style="height: 220px;">
+          <div class="card-body d-flex flex-column">
+            <a href="{% url 'services' %}" class="btn btn-primary mt-auto">Services</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="col-sm-12 col-lg-4 col-md-6">
+        <div class="card border shadow-sm rounded-4 w-100 mw-100 h-100 bg-white">
+          <img src="{% static 'images/money-transfer-image.png' %}" class="card-img-top w-100 p-3 object-fit-cover" alt="..." style="height: 220px;">
+          <div class="card-body d-flex flex-column">
+            <a href="{% url 'services' %}" class="btn btn-primary mt-auto">Services</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="col-sm-12 col-lg-4 col-md-6">
+        <div class="card border shadow-sm rounded-4 w-100 mw-100 h-100 bg-white">
+          <img src="{% static 'images/health-insurance-image.png' %}" class="card-img-top w-100 p-3 object-fit-cover" alt="..." style="height: 220px;">
+          <div class="card-body d-flex flex-column">
+            <a href="{% url 'services' %}" class="btn btn-primary mt-auto">Services</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 5 -->
+      <div class="col-sm-12 col-lg-4 col-md-6">
+        <div class="card border shadow-sm rounded-4 w-100 mw-100 h-100 bg-white">
+          <img src="{% static 'images/travel-insurance-image.png' %}" class="card-img-top w-100 p-3 object-fit-cover" alt="..." style="height: 220px;">
+          <div class="card-body d-flex flex-column">
+            <a href="{% url 'services' %}" class="btn btn-primary mt-auto">Services</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 6 -->
+      <div class="col-sm-12 col-lg-4 col-md-6">
+        <div class="card border shadow-sm rounded-4 w-100 mw-100 h-100 bg-white">
+          <img src="{% static 'images/train-ticket-card.png' %}" class="card-img-top w-100 p-3 object-fit-cover" alt="..." style="height: 220px;">
+          <div class="card-body d-flex flex-column">
+            <a href="{% url 'services' %}" class="btn btn-primary mt-auto">Services</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+{% endblock body %}

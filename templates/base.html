@@ -1,0 +1,122 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {% block title%} {% endblock title %} </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #0b132b; border-bottom: 4px solid #0b132b;" data-bs-theme="dark">
+  <div class="container-fluid">
+    
+    <!-- 1. Brand Logo / Text (Always visible on the left) -->
+    <a class="navbar-brand d-flex align-items-center" href="{% url 'home' %}">
+  <img src="{% static 'images/logo.png' %}" alt="Galaxy Trading Company" height="45" class="d-inline-block align-text-top me-2">
+  <!-- 'd-none d-sm-inline' hides the text on extra-small mobile screens, and shows it from small screens up -->
+  <span class="d-none d-sm-inline">Galaxy Trading Company</span>
+</a>
+    <!-- 2. Toggle Button for Small Screens (Triggers the right-side offcanvas panel) -->
+    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- 3. The Responsive Container: 
+         - On Large screens: Displays links horizontally right on the navbar.
+         - On Small screens: Transforms into a hidden sliding drawer from the RIGHT (offcanvas-end). -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      
+      <!-- Offcanvas Header (Only visible when the drawer is open on small screens) -->
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+
+      <!-- Offcanvas Body / Nav Links Container -->
+      <div class="offcanvas-body">
+        
+        <!-- Navigation Links (Visible horizontally on desktop, stacked vertically inside the right drawer on mobile) -->
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link active text-white" aria-current="page" href="{% url 'home' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="{% url 'services' %}">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="{% url 'documentschecklist' %}">Documents Checklist</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="{% url 'about' %}">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="{% url 'contact' %}">Contact Us</a>
+          </li>
+
+          <li class="nav-item align-self-lg-center ms-lg-3 mt-3 mt-lg-0">
+    <a href="tel:+918437203444" class="btn btn-outline-light btn-sm px-3 rounded-pill">
+      <i class="bi-telephone-fill me-1"></i> Call Us
+    </a>
+  </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+<!-- MAIN PAGE CONTENT (Different for Home, Services, Contact, etc.) -->
+    <main  class="flex-grow-1">
+        {% block body %}{% endblock body %}
+    </main>
+
+    <!-- FOOTER (Exact Match & Responsive) -->
+<footer class="text-white py-5 mt-auto" style="background-color: #0b132b;" data-bs-theme="dark">
+  <div class="container">
+    <div class="row g-4">
+      
+      <!-- Column 1 -->
+      <div class="col-lg-3 col-md-6">
+        <h5 class="text-white mb-2">Contact Info</h5>
+        <p class="text-white">Galaxy trading Company </p>                                                                                                                                                                                                                                                                                                                 
+        <p class="text-white mb-1">Office Address</p>
+        <p class="text-white">VPO Butala, Patti Rajpura Tehsil: Baba Bakala, District: Amritsar
+         Punjab, India - 143203</p>
+        <p class="text-white mb-1"><i class="fas fa-envelope me-2"></i>infogalaxytrading2020@gmail.com</p>
+        <p class="text-white mb-1"><i class="fa-duotone fa-solid fa-phone"></i>+918437203444</p>
+        <p class="text-white"><i class="fa-duotone fa-solid fa-phone"></i>+919646685588</p>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="col-lg-3 col-md-6">
+        <h5 class="text-white mb-3">Opening Time</h5>
+        <ul class="list-unstyled">
+          <li class="mb-2"><p class="text-white mb-0"><i class="fas fa-clock me-2"></i> <strong>Mon – Sat:</strong> 09:00 AM – 08:30 PM</p></li>
+        </ul>
+      </div>
+
+      <!-- Column 3 -->
+    <div class="col-lg-3 col-md-6">
+        <h5 class="text-white mb-3">Our Sevices</h5>
+        <ul class="list-unstyled">
+          <li class="mb-2"><a href="{% url 'services' %}" class="text-white">Travel & Ticketing Services</a></li>
+          <li class="mb-2"><a href="{% url 'services' %}" class="text-white">Financial & Government ID Services</a></li>
+          <li class="mb-2"> <a href="{% url 'services' %}" class="text-white">Insurance Services</a></li>
+          <li class="mb-2"> <a href="{% url 'services' %}" class="text-white">Internet & Online Services</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <h5 class="text-white mb-3">Fixed Departures & Ticket Booking</h5>
+        <p class="text-white">Looking for an easy and stress-free trip? Galaxy Trading Company offers great prices on domestic and international flights, along with convenient train and bus ticket bookings. We also offer fixed-departure group tours, helping you plan your entire journey smoothly from start to finish.
+    </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Bootstrap 5 JS Bundle CDN (Required for carousels to slide/cycle) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script src="{% static 'JS/validation.js' %}"></script>
+</body>
+</html>

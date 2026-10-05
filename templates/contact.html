@@ -1,0 +1,147 @@
+{% extends "base.html" %} 
+{% load static %}
+{% block title %} Contact Us Webpage {% endblock title %}
+{% block body %}
+<div class="ratio ratio-21x9 ratio-services-banner">
+    <img src="{% static 'images/Contact.png' %}" class="d-block opacity-75 w-100 h-100 mw-100 object-fit-cover " alt="...">
+    <div class="position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center">
+        <h1 class="text-black display-1 fw-bold add-shadow-stroke-3 ">Contact Us</h1>
+    </div>
+</div>
+
+  <!--Parent-Container-1-->
+<div class="container-fluid my-1 p-3">
+        <div class="row g-4">
+            <div class= "col-sm-12 col-lg-6">
+                <h4 class="fs-3" style="color: #0b3556;">Quick Contact</h4>
+                <h1 class="fw-semibold display-5" style="color: #0b3556;">Have Questions? 
+                    Don't Hesitate to Contact Us</h1>
+                <p class="fs-5 mt-3 text-muted" style="color: #0b132b;">Get in touch with Galaxy Trading Company today. Our team is here to provide the information and assistance you need and help make the process simple and convenient.</p>
+                <div class="ratio ratio-16x9">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d963.5850112373832!2d75.32295216281298!3d31.607762275825614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391bc9ec22d3ca57%3A0xaf05480e82db2ddb!2sGALAXY%20TRADING%20CO!5e0!3m2!1sen!2sin!4v1789890898641!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe> <!--Closed frame tag under ratio-->
+                </div> 
+                <div class="border border-opacity-25 border-black mt-3"></div>
+
+                 <!--Nested-Container-1-->
+                <div class="container-fluid my-2 p-2" style="color: #0b3556;">
+                    <div class="row g-4">
+                        <div class="col-sm-12 col-lg-6 col-md-6">
+                            <h4 class="fs-5">Quick Contact</h4>
+                            <p class="mb-1"><i class="fa-solid fa-envelope me-1"></i>infogalaxytrading2020@gmail.com</p>
+                            <p class="mb-0"><i class="fa-duotone fa-solid fa-phone"></i>+918437203444</p>
+                            <p class="mb-0"><i class="fa-duotone fa-solid fa-phone"></i>+919646685588</p>
+                        </div>
+
+                        <!--Nested-Container-2-->
+                         <div class="col-sm-12 col-lg-6 col-md-6">
+                            <h4 class="fs-5">Opening Hours</h4>
+                            <p class="fw-semibold">Mon–Sun: 9:00 AM–8:30 PM</p>
+                        </div>
+
+                         <!--Nested-Container-3-->
+                         <div class="col-12">
+                            <a href="https://wa.me/918437203444"
+                            target="_blank"
+                            class="btn btn-success">
+                         <i class="fa-brands fa-whatsapp"></i>
+                         </a>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+                <!--Parent-Container-2-->
+            <div class= "col-sm-12 col-lg-6">
+                <h4 class="fs-3" style="color: #0b3556;">Let’s Connect</h4>
+                <h1 class="fw-semibold display-5" style="color: #0b3556;"> Send Your Message </h1>
+
+                 <!--Nested-Container-1-->
+                <div class="container-fluid my-2 p-2" style="color: #0b3556;">
+                    <form action="{% url 'contact' %}" method="POST" class="needs-validation" novalidate>
+                    {% csrf_token %}
+                    <div class="row g-3">
+                        <div class="col-sm-12 col-lg-6 col-md-6">
+                        <input type="text" class="form-control" placeholder="Your First name" name="first_name" aria-label="First name" required>
+                         <div class="invalid-feedback">
+                            Please enter your first name.
+                        </div>
+                        </div>  <!--Nested -Container-1-Column-Closed-->
+
+                <!--Nested -Container-2-->
+                     <div class="col-sm-12 col-lg-6 col-md-6">
+                        <input type="text" class="form-control" placeholder="Your Last name" name="last_name" last_ aria-label="Last name" required>
+                     <div class="invalid-feedback">
+                            Please enter your last name.
+                        </div>
+               
+                    </div> <!--Nested-Container-2-Closed-->
+                     
+                     <!--Nested -Container-3-->
+                     <div class="col-sm-12 col-lg-6 col-md-6">
+                       <input type="tel" class="form-control" placeholder="Your Phone Number" name="phone_number" aria-label="Phone number" required>
+                    <div class="invalid-feedback">
+                            Please provide a valid phone number.
+                        </div>
+                    </div> <!--Nested-Container-3-Closed-->
+
+                      <!--Nested -Container-4-->
+                     <div class="col-sm-12 col-lg-6 col-md-6">
+                        <input type="email" class="form-control" placeholder="Your Email" name="email" arial-label="Email"  id="inputEmail4" required>
+                       <div class="invalid-feedback">
+                             Please provide a valid email.
+                        </div>
+                    </div> <!--Nested-Container-4-Closed-->          
+
+                     <!--Nested -Container-5-->
+                     <div class="col-12">  
+                        <select class="form-select" name="service" aria-label="Select a Service" required>
+                        <option selected disabled value="">Select a Service</option>
+                        <option value="Passport">Passport</option>
+                        <option value="Tourist Visa">Tourist Visa </option>
+                        <option value="Holiday Packages">Holiday Packages</option>
+                        <option value="Air Ticket">Air Ticket</option>
+                        <option value="Foreign Money Transfer">Foreign Money Transfer</option>
+                        <option value="Money Transfer">Money Transfer</option>
+                        <option value="Western Union">Western Union</option>
+                        <option value="MoneyGram">MoneyGram</option>
+                        <option value="PAN Card">PAN Card</option>
+                        <option value="Aadhaar Card Update ">Aadhaar Card Update </option>
+                        <option value="Motor & Car Insurance">Motor & Car Insurance</option>
+                        <option value="Health Insurance">Health Insurance</option>
+                        <option value="Travel Insurance">Travel Insurance</option>
+                        <option value="Bus Ticket">Bus Ticket</option>
+                        <option value="Train Ticket">Train Ticket</option>
+                        <option value="Airtel AirFiber WiFi">Airtel AirFiber WiFi</option>
+                        <option value="Online Job Form">Online Job Form</option>
+                        <option value="Income Tax Return (ITR)">Income Tax Return (ITR)</option>
+                        </select>
+                         <div class="invalid-feedback">
+                          Please select a valid service from the list.
+                         </div>
+                     </div> <!--Nested-Container-5-Closed-->
+
+                      <!--Nested -Container-6-->
+                     <div class="col-12">
+                       <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="How can we help?" name="description" rows="3" required></textarea>
+                    <div class="invalid-feedback">
+                          Please enter your message.
+                         </div>
+                    </div> <!--Nested-Container-6-Closed-->                    
+
+                    <!--Nested -Container-Button-->
+                      <div class="col-12">
+                      <button class="btn btn-primary" type="submit">Send Message</button>
+                      </div> <!--Nested-Container-Button-Closed-->
+
+            <!--Nested-Container-Fluid-Closed-Div-->
+            </div>
+             <!--Nested-Container-Row-Closed-Div-->
+            </div>
+        </form>
+            </div><!--Parent-Container-2-Closed-Div-->
+        
+            <!--Main-Parent-Container-div & Row Div-->
+            </div>
+            </div>      
+    
+{% endblock body %}

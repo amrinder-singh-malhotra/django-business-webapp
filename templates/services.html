@@ -1,0 +1,236 @@
+{% extends "base.html" %} 
+{% load static %}
+
+{% block title %} Services PAGE {% endblock title %}
+{% block body %}
+<div class="ratio ratio-21x9 ratio-services-banner">
+    <img src="{% static 'images/service-banner.png' %}" class="d-block opacity-75 w-100 h-100 mw-100 object-fit-cover " alt="...">
+    <div class="position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center">
+        <h1 class="text-black fw-bold display-1 add-shadow-stroke">SERVICES</h1>
+    </div>
+</div>
+
+<!-- SERVICES CARDS SECTION -->
+<div class="container-fluid my-1">
+  <div class="p-2">
+    
+    <div class="text-center mb-2">
+      <h2 class="fw-bold text-dark">Our Services</h2>
+      <p class="text-muted">Explore all the services we offer, all in one place.</p>
+    </div>
+
+    <div class="row g-4">
+        <!-- CARD 1 -->
+<div class="col-md-4">
+    <div class="ratio ratio-4x3 image-shadow rounded-4 card-hover-stage">
+        <!-- Main Image with a transition for fading -->
+        <img src="{% static 'images/holiday-package.png' %}" class="rounded-4 w-100 h-100 mw-100 object-fit-cover card-img-transition" alt="...">
+
+        <!-- Sliding Box -->
+        <div class="rounded-4 position-absolute bottom-0 start-0 p-4 w-100 h-100 mw-100 card-slide-box" style="background-color: rgba(15, 23, 42, 0.85);">
+            <div class="text-white">
+            <h4 class="fw-bold">Holiday Package</h4>
+            <p class="small text-light">Explore amazing destinations with our exclusive travel deals.</p>
+            <a href="{% url 'contact' %}" class="btn btn-outline-light btn-sm mt-2">Get In Touch</a>
+        </div>
+        </div>
+    </div>
+</div>
+      
+         <!-- CARD 2 -->
+           <div class="col-md-4">
+    <div class="ratio ratio-4x3 image-shadow rounded-4 card-hover-stage">
+        <!-- Main Image with a transition for fading -->
+        <img src="{% static 'images/passport.png' %}" class="rounded-4 w-100 h-100 mw-100 object-fit-cover card-img-transition" alt="...">
+
+        <!-- Sliding Box -->
+        <div class="rounded-4 position-absolute bottom-0 start-0 p-4 w-100 h-100 mw-100 card-slide-box" style="background-color: rgba(15, 23, 42, 0.85);">
+            <div class="text-white">
+            <h4 class="fw-bold">Passport Application Services</h4>
+            <p class="small text-light">Get assistance with your passport application process.</p>
+            <a href="{% url 'contact' %}" class="btn btn-outline-light btn-sm mt-2">Get In Touch</a>
+        </div>
+        </div>
+    </div>
+</div>
+      
+
+         <!-- CARD 3 -->
+          <div class="col-md-4">
+    <div class="ratio ratio-4x3 image-shadow rounded-4 card-hover-stage">
+        <!-- Main Image with a transition for fading -->
+        <img src="{% static 'images/air-ticket.png' %}" class="rounded-4 w-100 h-100 mw-100 object-fit-cover card-img-transition" alt="...">
+
+        <!-- Sliding Box -->
+        <div class="rounded-4 position-absolute bottom-0 start-0 p-4 w-100 h-100 mw-100 card-slide-box" style="background-color: rgba(15, 23, 42, 0.85);">
+            <div class="text-white">
+            <h4 class="fw-bold">Air Ticket Booking</h4>
+            <p class="small text-light">Book domestic and international flights conveniently.</p>
+            <a href="{% url 'contact' %}" class="btn btn-outline-light btn-sm mt-2">Get In Touch</a>
+        </div>
+        </div>
+    </div>
+</div>
+      
+     <!-- CARD 4 -->
+    <div class="col-md-4">
+    <div class="ratio ratio-4x3 image-shadow rounded-4 card-hover-stage">
+        <!-- Main Image with a transition for fading -->
+        <img src="{% static 'images/tourist-visa.png' %}" class="rounded-4 w-100 h-100 mw-100 object-fit-cover card-img-transition" alt="...">
+
+        <!-- Sliding Box -->
+        <div class="rounded-4 position-absolute bottom-0 start-0 p-4 w-100 h-100 mw-100 card-slide-box" style="background-color: rgba(15, 23, 42, 0.85);">
+            <div class="text-white">
+            <h4 class="fw-bold">Tourist Visa Application & Consultation</h4>
+            <p class="small text-light">Get professional guidance for your tourist visa application.</p>
+            <a href="{% url 'contact' %}" class="btn btn-outline-light btn-sm mt-2">Get In Touch</a>
+        </div>
+        </div>
+    </div>
+</div>
+      
+
+     <!-- CARD 5 -->
+    <div class="col-md-4">
+    <div class="ratio ratio-4x3 image-shadow rounded-4 card-hover-stage">
+        <!-- Main Image with a transition for fading -->
+        <img src="{% static 'images/bus-ticket.png' %}" class="rounded-4 w-100 h-100 mw-100 object-fit-cover card-img-transition" alt="...">
+
+        <!-- Sliding Box -->
+        <div class="rounded-4 position-absolute bottom-0 start-0 p-4 w-100 h-100 mw-100 card-slide-box" style="background-color: rgba(15, 23, 42, 0.85);">
+            <div class="text-white">
+            <h4 class="fw-bold">Bus Ticket Booking</h4>
+            <p class="small text-light">Book bus tickets for your preferred destinations conveniently.</p>
+            <a href="{% url 'contact' %}" class="btn btn-outline-light btn-sm mt-2">Get In Touch</a>
+        </div>
+        </div>
+    </div>
+</div>
+      
+     <!-- CARD 6 -->
+    <div class="col-md-4">
+    <div class="ratio ratio-4x3 image-shadow rounded-4 card-hover-stage">
+        <!-- Main Image with a transition for fading -->
+        <img src="{% static 'images/train-tickets.png' %}" class="rounded-4 w-100 h-100 mw-100 object-fit-cover card-img-transition" alt="...">
+
+        <!-- Sliding Box -->
+        <div class="rounded-4 position-absolute bottom-0 start-0 p-4 w-100 h-100 mw-100 card-slide-box" style="background-color: rgba(15, 23, 42, 0.85);">
+            <div class="text-white">
+            <h4 class="fw-bold">Train Ticket Booking</h4>
+            <p class="small text-light">Book train tickets for your preferred destinations conveniently.</p>
+            <a href="{% url 'contact' %}" class="btn btn-outline-light btn-sm mt-2">Get In Touch</a>
+        </div>
+        </div>
+    </div>
+</div>
+      
+     <!-- CARD 7 -->
+    <div class="col-md-4">
+    <div class="ratio ratio-4x3 image-shadow rounded-4 card-hover-stage">
+        <!-- Main Image with a transition for fading -->
+        <img src="{% static 'images/job.png' %}" class="rounded-4 w-100 h-100 mw-100 object-fit-cover card-img-transition" alt="...">
+
+        <!-- Sliding Box -->
+        <div class="rounded-4 position-absolute bottom-0 start-0 p-4 w-100 h-100 mw-100 card-slide-box" style="background-color: rgba(15, 23, 42, 0.85);">
+            <div class="text-white">
+            <h4 class="fw-bold">Online Job Application Services</h4>
+            <p class="small text-light">Get assistance with completing and submitting online job applications.</p>
+            <a href="{% url 'contact' %}" class="btn btn-outline-light btn-sm mt-2">Get In Touch</a>
+        </div>
+        </div>
+    </div>
+</div>
+      
+     <!-- CARD 8 -->
+    <div class="col-md-4">
+    <div class="ratio ratio-4x3 image-shadow rounded-4 card-hover-stage">
+        <!-- Main Image with a transition for fading -->
+        <img src="{% static 'images/income-tax.png' %}" class="rounded-4 w-100 h-100 mw-100 object-fit-cover card-img-transition" alt="...">
+
+        <!-- Sliding Box -->
+        <div class="rounded-4 position-absolute bottom-0 start-0 p-4 w-100 h-100 mw-100 card-slide-box" style="background-color: rgba(15, 23, 42, 0.85);">
+            <div class="text-white">
+            <h4 class="fw-bold">Income Tax Return (ITR) Filing</h4>
+            <p class="small text-light">Get assistance with preparing and filing your income tax return.</p>
+            <a href="{% url 'contact' %}" class="btn btn-outline-light btn-sm mt-2">Get In Touch</a>
+        </div>
+        </div>
+    </div>
+</div>
+      
+
+     <!-- CARD 9 -->
+    <div class="col-md-4">
+    <div class="ratio ratio-4x3 image-shadow rounded-4 card-hover-stage">
+        <!-- Main Image with a transition for fading -->
+        <img src="{% static 'images/pan.png' %}" class="rounded-4 w-100 h-100 mw-100 object-fit-cover card-img-transition" alt="...">
+
+        <!-- Sliding Box -->
+        <div class="rounded-4 position-absolute bottom-0 start-0 p-4 w-100 h-100 mw-100 card-slide-box" style="background-color: rgba(15, 23, 42, 0.85);">
+            <div class="text-white">
+            <h4 class="fw-bold">PAN Card Application</h4>
+            <p class="small text-light">Get assistance with applying for a new PAN card or correcting your existing PAN card.</p>
+            <a href="{% url 'contact' %}" class="btn btn-outline-light btn-sm mt-2">Get In Touch</a>
+        </div>
+        </div>
+    </div>
+</div>
+      
+
+     <!-- CARD 10 -->
+    <div class="col-md-4">
+    <div class="ratio ratio-4x3 image-shadow rounded-4 card-hover-stage">
+        <!-- Main Image with a transition for fading -->
+        <img src="{% static 'images/aadhar-card.png' %}" class="rounded-4 w-100 h-100 mw-100 object-fit-cover card-img-transition" alt="...">
+
+        <!-- Sliding Box -->
+        <div class="rounded-4 position-absolute bottom-0 start-0 p-4 w-100 h-100 mw-100 card-slide-box" style="background-color: rgba(15, 23, 42, 0.85);">
+            <div class="text-white">
+            <h4 class="fw-bold">Aadhaar Card Update Services</h4>
+            <p class="small text-light">Get assistance with updating your Aadhaar card details.</p>
+            <a href="{% url 'contact' %}" class="btn btn-outline-light btn-sm mt-2">Get In Touch</a>
+        </div>
+        </div>
+    </div>
+</div>
+      
+     <!-- CARD 11 -->
+    <div class="col-md-4">
+    <div class="ratio ratio-4x3 image-shadow rounded-4 card-hover-stage">
+        <!-- Main Image with a transition for fading -->
+        <img src="{% static 'images/motor-car.png' %}" class="rounded-4 w-100 h-100 mw-100 object-fit-cover card-img-transition" alt="...">
+
+        <!-- Sliding Box -->
+        <div class="rounded-4 position-absolute bottom-0 start-0 p-4 w-100 h-100 mw-100 card-slide-box" style="background-color: rgba(15, 23, 42, 0.85);">
+            <div class="text-white">
+            <h4 class="fw-bold">Motor & Car Insurance</h4>
+            <p class="small text-light">Get reliable insurance coverage for your vehicle.</p>
+            <a href="{% url 'contact' %}" class="btn btn-outline-light btn-sm mt-2">Get In Touch</a>
+        </div>
+        </div>
+    </div>
+</div>
+      
+
+     <!-- CARD 12 -->
+    <div class="col-md-4">
+    <div class="ratio ratio-4x3 image-shadow rounded-4 card-hover-stage">
+        <!-- Main Image with a transition for fading -->
+        <img src="{% static 'images/money-gram.png' %}" class="rounded-4 w-100 h-100 mw-100 object-fit-cover card-img-transition" alt="...">
+
+        <!-- Sliding Box -->
+        <div class="rounded-4 position-absolute bottom-0 start-0 p-4 w-100 h-100 mw-100 card-slide-box" style="background-color: rgba(15, 23, 42, 0.85);">
+            <div class="text-white">
+            <h4 class="fw-bold">Money Transfer, Western Union & MoneyGram</h4>
+            <p class="small text-light">Send and receive money securely through trusted transfer services.</p>
+            <a href="{% url 'contact' %}" class="btn btn-outline-light btn-sm mt-2">Get In Touch</a>
+        </div>
+        </div>
+    </div>
+</div>
+      
+    </div>
+    </div>
+    </div>
+    </div>
+{% endblock body %}
