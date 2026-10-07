@@ -56,7 +56,7 @@ class Contact(models.Model):
     first_name=models.CharField(max_length=100)
     last_name=models.CharField(max_length=100)
     phone_number=models.CharField()
-    email=models.EmailField(unique=True)
+    email=models.EmailField()
     service=models.CharField()
     description=models.TextField()
     
