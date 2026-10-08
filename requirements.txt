@@ -5,4 +5,4 @@ dj-database-url
 whitenoise
 Pillow
 python-dotenv
-django-storages
+django-supabase-storage
