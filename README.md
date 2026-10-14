@@ -32,7 +32,7 @@ python-dotenv, django-supabase-storage
 - Django>=5.0
 - gunicorn
 - psycopg2-binary 
-- dj-database-ur 
+- dj-database-url 
 - whitenoise 
 - Pillow 
 - python-dotenv
